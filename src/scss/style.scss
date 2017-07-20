@@ -1,0 +1,65 @@
+@import "_grid";
+@import "_variables";
+@import "_break";
+body {
+    .header {
+        background: $labAmarillo;
+        color: $blanco;
+        padding: 10vw;
+    }
+    .nav {
+        li {
+            background: $labGriss;
+            color: $blanco;
+            margin: 3vw;
+            padding: 5vw;
+            &.active {
+                background: $labAmarillo;
+            }
+        }
+    }
+    ol {
+        list-style: none;
+    }
+    .aside {
+        text-align: center;
+        background: $labGriss;
+        color: $blanco;
+    }
+    .footer {
+        @extend .aside;
+    }
+}
+
+@media #{$tablet} {
+    body {
+        .header {
+            padding: 5vh;
+        }
+        .nav {
+            @include column(4);
+            margin: 0;
+        }
+    }
+}
+
+@media #{$desktop} {
+    body {
+        .header {
+            padding: 5vh;
+        }
+        .nav {
+            @include column(3);
+            margin: 0;
+        }
+        .main{
+             @include column(6); 
+        }
+        .aside {
+            @include column(3);
+        }
+        .footer{
+            @include column(12)
+        }
+    }
+}
